@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-native-community/slider": "^1.0.4",
+    "prop-types": "^15.7.2",
     "react": "16.8.3",
     "react-native": "0.59.2",
     "redux": "^4.0.1",
@@ -27,6 +28,10 @@
     "@react-native-community/eslint-config": "^0.0.3",
     "babel-jest": "^24.5.0",
     "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "jest": "^24.5.0",
     "majestic": "^1.2.24",
     "metro-react-native-babel-preset": "^0.53.1",

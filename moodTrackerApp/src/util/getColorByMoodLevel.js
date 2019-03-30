@@ -1,4 +1,4 @@
-import {MOOD_COLOR} from "./constants"
+import { MOOD_COLOR } from './constants';
 
 const moodColors = {
   1: MOOD_COLOR.SAD_MAX,
@@ -8,8 +8,6 @@ const moodColors = {
   5: MOOD_COLOR.HAPPY_MIN,
   6: MOOD_COLOR.HAPPY,
   7: MOOD_COLOR.HAPPY_MAX,
-}
+};
 
-export const getColorByMoodLevel = (level = 4) => {
-  return moodColors[level]
-}
+export const getColorByMoodLevel = (level = 4) => moodColors[level];

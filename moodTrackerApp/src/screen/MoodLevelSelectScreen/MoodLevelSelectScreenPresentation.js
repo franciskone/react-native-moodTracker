@@ -1,15 +1,14 @@
-import React from 'react'
-import {StyleSheet, Text, View} from 'react-native'
-import {COLOR, STYLE} from "../../util/constants"
-import {MoodPicker} from "../../components/MoodPicker"
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { COLOR, STYLE } from '../../util/constants';
+import { MoodPicker } from '../../components/MoodPicker';
 
 export class MoodLevelSelectScreenPresentation extends React.Component {
-  
   // constructor(props) {
   //   super(props);
   //   this.state = {};
   // }
-  
+
   // LifeCycle methods
   // componentWillMount() {}
   // componentDidMount() {}
@@ -18,15 +17,15 @@ export class MoodLevelSelectScreenPresentation extends React.Component {
   // shouldComponentUpdate(nextProps, nextState) {return true}
   // componentWillUpdate(nextProps, nextState) {}
   // componentDidUpdate(prevProps, prevState) {}
-  
+
   // Component methods
-  
+
   render() {
     return (
       <View style={styles.screenContainer}>
-        <MoodPicker/>
+        <MoodPicker />
       </View>
-    )
+    );
   }
 }
 
@@ -39,4 +38,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: STYLE.SCREEN_PADDING,
   },
-})
+});

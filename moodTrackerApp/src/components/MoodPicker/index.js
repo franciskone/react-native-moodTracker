@@ -1,1 +1,1 @@
-export {MoodPickerPresentation as MoodPicker} from './MoodPickerPresentation'
+export { MoodPickerPresentation as MoodPicker } from './MoodPickerPresentation';

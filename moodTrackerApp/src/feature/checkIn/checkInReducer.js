@@ -1,20 +1,20 @@
-import {checkInActionType} from "./checkInActionType"
+import { checkInActionType } from './checkInActionType';
 
 export const checkInInitState = {
   moodLevel: null,
   feelingList: [],
   comment: null,
   feelingOptions: [
-    {id: 1, label: "depressed"},
-    {id: 2, label: "bored"},
-    {id: 3, label: "optimistic"},
-    {id: 4, label: "happy"},
+    { id: 1, label: 'depressed' },
+    { id: 2, label: 'bored' },
+    { id: 3, label: 'optimistic' },
+    { id: 4, label: 'happy' },
   ],
   moodLevelOptions: {
     minLevel: 1,
     maxLevel: 7,
-  }
-}
+  },
+};
 
 export const checkInReducer = (state = checkInInitState, action) => {
   const reducers = {
@@ -24,59 +24,59 @@ export const checkInReducer = (state = checkInInitState, action) => {
     [checkInActionType.CHECK_IN_COMMENT_SET]: checkInCommentSetCase,
     [checkInActionType.CHECK_IN_RESET]: checkInResetCase,
     default: () => state,
-  }
-  
+  };
+
   return reducers[action.type]
     ? reducers[action.type](state, action)
-    : reducers['default']()
-}
+    : reducers.default();
+};
 
 function checkInMoodLevelSetCase(state, action) {
-  const {minLevel, maxLevel} = state.moodLevelOptions
-  
-  let moodLevel = action.payload.moodLevel
-  
+  const { minLevel, maxLevel } = state.moodLevelOptions;
+
+  let { moodLevel } = action.payload;
+
   if (moodLevel != null && moodLevel > maxLevel) {
-    moodLevel = maxLevel
+    moodLevel = maxLevel;
   }
   if (moodLevel != null && moodLevel < minLevel) {
-    moodLevel = minLevel
+    moodLevel = minLevel;
   }
-  
+
   return {
     ...state,
     moodLevel,
-  }
+  };
 }
 
 function checkInFeelingAddCase(state, action) {
-  const feelingId = action.payload.feelingId
-  const {feelingList} = state
-  
+  const { feelingId } = action.payload;
+  const { feelingList } = state;
+
   const newFeelingList = feelingId != null && !feelingList.includes(feelingId)
     ? [...feelingList, feelingId]
-    : feelingList
-  
+    : feelingList;
+
   return {
     ...state,
     feelingList: newFeelingList,
-  }
+  };
 }
 
 function checkInFeelingRemoveCase(state, action) {
-  const feelingId = action.payload.feelingId
-  
+  const { feelingId } = action.payload;
+
   return {
     ...state,
     feelingList: state.feelingList.filter(id => id !== feelingId),
-  }
+  };
 }
 
 function checkInCommentSetCase(state, action) {
   return {
     ...state,
     comment: action.payload.comment,
-  }
+  };
 }
 
 function checkInResetCase(state, action) {
@@ -85,5 +85,5 @@ function checkInResetCase(state, action) {
     moodLevel: null,
     feelingList: [],
     comment: null,
-  }
+  };
 }

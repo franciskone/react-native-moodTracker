@@ -9,7 +9,7 @@ export const COLOR = {
   DARK_GREEN: '#87AD35',
   LIGHT_GREEN: '#94BF3D',
   ORANGE: '#F6BC41',
-}
+};
 
 export const MOOD_COLOR = {
   SAD_MAX: COLOR.DARK_GRAY,
@@ -19,8 +19,8 @@ export const MOOD_COLOR = {
   HAPPY_MIN: COLOR.DARK_GREEN,
   HAPPY: COLOR.LIGHT_GREEN,
   HAPPY_MAX: COLOR.ORANGE,
-}
+};
 
 export const STYLE = {
   SCREEN_PADDING: 20,
-}
+};
