@@ -1,0 +1,2 @@
+export { getColorByMoodLevel } from './getColorByMoodLevel';
+

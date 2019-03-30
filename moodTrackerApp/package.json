@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "ios": "react-native run-ios",
+    "test:terminal": "jest --watchAll",
+    "test:withgui": "./node_modules/majestic/dist/server/index.js --app",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/slider": "^1.0.4",
     "react": "16.8.3",
     "react-native": "0.59.2",
     "redux": "^4.0.1",
@@ -15,7 +18,8 @@
     "redux-logic": "^2.1.1",
     "redux-persist": "^5.10.0",
     "redux-persist-transform-filter": "^0.0.18",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -24,6 +28,7 @@
     "babel-jest": "^24.5.0",
     "eslint": "^5.16.0",
     "jest": "^24.5.0",
+    "majestic": "^1.2.24",
     "metro-react-native-babel-preset": "^0.53.1",
     "react-test-renderer": "16.8.3"
   },
