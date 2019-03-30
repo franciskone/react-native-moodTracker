@@ -1,20 +1,13 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
-import {MoodPicker} from './components/MoodPicker';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import {MoodLevelSelectScreenPresentation} from "./screen/MoodLevelSelectScreen"
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-	      <MoodPicker />
+	      <MoodLevelSelectScreenPresentation />
       </View>
     );
   }
@@ -28,16 +21,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-    padding: 20,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });

@@ -1,0 +1,13 @@
+const prefix = 'checkIn';
+
+export const checkInActionType = {
+	CHECK_IN_MOOD_LEVEL_SET: `${prefix}/CHECK_IN_MOOD_LEVEL_SET`,
+	CHECK_IN_FEELING_ADD: `${prefix}/CHECK_IN_FEELING_ADD`,
+	CHECK_IN_FEELING_REMOVE: `${prefix}/CHECK_IN_FEELING_REMOVE`,
+	CHECK_IN_COMMENT_SET: `${prefix}/CHECK_IN_COMMENT_SET`,
+	CHECK_IN_RESET: `${prefix}/CHECK_IN_RESET`,
+	
+	CHECK_IN_SAVE: `${prefix}/CHECK_IN_SAVE`,
+	CHECK_IN_SAVE_SUCCESS: `${prefix}/CHECK_IN_SAVE_SUCCESS`,
+	CHECK_IN_SAVE_ERROR: `${prefix}/CHECK_IN_SAVE_ERROR`,
+};
