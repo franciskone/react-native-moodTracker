@@ -5,5 +5,10 @@
 	"rules": {
 		"import/prefer-default-export": "off",
 		"no-use-before-define": "off"
+	},
+	"plugins":  ["jest"],
+	"env": {
+		"jest": true
 	}
+
 }
