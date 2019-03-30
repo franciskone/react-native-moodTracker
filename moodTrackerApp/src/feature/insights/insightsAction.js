@@ -1,7 +1,7 @@
 import { insightsActionTypes } from './insightsActionTypes';
 import { actionCreator } from '../../util';
 
-export default {
+export const insightsAction = {
   insightsGet,
   insightsGetSuccess,
   insightsError,

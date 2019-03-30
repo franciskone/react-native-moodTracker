@@ -1,5 +1,5 @@
 import { insightsActionTypes } from './insightsActionTypes';
-import insightsAction from './insightsAction';
+import { insightsAction } from './insightsAction';
 
 
 describe('insightsAction', () => {

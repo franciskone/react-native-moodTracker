@@ -1,14 +1,14 @@
-import {insightsActionTypes} from "./insightsActionTypes"
+import { insightsActionTypes } from './insightsActionTypes';
 
-const initState = {
+export const insightsInitState = {
   averageMood: {
-    1: 10,
-    2: 10,
-    3: 5,
-    4: 5,
-    5: 10,
-    6: 40,
-    7: 20,
+    // 1: 10,
+    // 2: 10,
+    // 3: 5,
+    // 4: 5,
+    // 5: 10,
+    // 6: 40,
+    // 7: 20,
   },
   checkInAmount: 20,
   checkInList: [
@@ -21,7 +21,7 @@ const initState = {
   ],
 };
 
-export const insightsReducer = (state = initState, action) => {
+export const insightsReducer = (state = insightsInitState, action) => {
   const reducers = {
     [insightsActionTypes.GET_SUCCESS]: insightsGetSuccessCase,
     default: () => state,
@@ -33,7 +33,12 @@ export const insightsReducer = (state = initState, action) => {
 };
 
 function insightsGetSuccessCase(state, action) {
-  return {
+  const { averageMood, checkInAmount, checkInList } = action.payload;
   
+  return {
+    ...state,
+    averageMood,
+    checkInAmount,
+    checkInList,
   };
 }
