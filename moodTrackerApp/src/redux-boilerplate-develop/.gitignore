@@ -1,0 +1,11 @@
+node_modules
+
+# Build artifacts
+dist/main.js
+dist/main.css
+build/main.css
+build/main.js
+build/specs.js
+build/vendors.js
+
+.idea
