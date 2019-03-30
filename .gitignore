@@ -1,2 +1,3 @@
 .idea/
 ./moodTrackerApp/node_modules
+./moodTrackerApi/node_modules
