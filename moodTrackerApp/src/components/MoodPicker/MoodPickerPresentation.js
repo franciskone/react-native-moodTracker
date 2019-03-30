@@ -1,13 +1,13 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import PropTypes from 'prop-types';
+import React from 'react'
+import {StyleSheet, Text, View} from 'react-native'
+import PropTypes from 'prop-types'
 import {MoodFace} from "./MoodFace"
 import {MoodSlider} from "./MoodSlider"
 
 export class MoodPickerPresentation extends React.Component {
   state = {
     moodLevel: 4,
-  };
+  }
   // constructor(props) {
   //   super(props);
   //   this.state = {};
@@ -23,7 +23,7 @@ export class MoodPickerPresentation extends React.Component {
   // componentDidUpdate(prevProps, prevState) {}
   
   // Component methods
-  onMoodChange = (moodLevel) => this.setState({moodLevel});
+  onMoodChange = (moodLevel) => this.setState({moodLevel})
   
   render() {
     return (<View style={{
@@ -34,11 +34,11 @@ export class MoodPickerPresentation extends React.Component {
     }}>
       <MoodFace level={this.state.moodLevel}/>
       <MoodSlider onChange={this.onMoodChange}/>
-    </View>);
+    </View>)
   }
 }
 
-MoodPickerPresentation.propTypes = {};
-MoodPickerPresentation.defaultProps = {};
+MoodPickerPresentation.propTypes = {}
+MoodPickerPresentation.defaultProps = {}
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({})

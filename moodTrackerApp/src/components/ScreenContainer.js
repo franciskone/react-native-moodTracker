@@ -5,29 +5,29 @@ import PropTypes from 'prop-types'
 // TODO Franciskone: DELETE if not needed
 
 export default ScreenContainer = ({children, safeAreaTop, safeAreaBottom}) => {
-	
-	return (
-		<View>
-			{safeAreaTop && <SafeAreaView /> }
-			{children}
-			{safeAreaBottom && <SafeAreaView /> }
-		</View>
-	)
+  
+  return (
+    <View>
+      {safeAreaTop && <SafeAreaView/>}
+      {children}
+      {safeAreaBottom && <SafeAreaView/>}
+    </View>
+  )
 }
 
 ScreenContainer.propTypes = {
-	safeAreaTop: PropTypes.bool,
-	safeAreaBottom: PropTypes.bool,
+  safeAreaTop: PropTypes.bool,
+  safeAreaBottom: PropTypes.bool,
 }
 ScreenContainer.defaultProps = {
-	safeAreaTop: false,
-	safeAreaBottom: false,
+  safeAreaTop: false,
+  safeAreaBottom: false,
 }
 
 const styles = StyleSheet.create({
-	flex: 1,
-	width: '100%',
-	justifyContent: 'center',
-	alignItems: 'center'
+  flex: 1,
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center'
 })
 

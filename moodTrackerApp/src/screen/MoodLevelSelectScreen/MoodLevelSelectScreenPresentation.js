@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React from 'react'
+import {StyleSheet, Text, View} from 'react-native'
 import {COLOR, STYLE} from "../../constants"
 import {MoodPicker} from "../../components/MoodPicker"
 
@@ -24,19 +24,19 @@ export class MoodLevelSelectScreenPresentation extends React.Component {
   render() {
     return (
       <View style={styles.screenContainer}>
-	      <MoodPicker />
+        <MoodPicker/>
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   screenContainer: {
-	  flex: 1,
-	  width: '100%',
-	  backgroundColor: COLOR.ULTRA_LIGHT_GRAY,
-	  justifyContent: 'center',
-	  alignItems: 'center',
+    flex: 1,
+    width: '100%',
+    backgroundColor: COLOR.ULTRA_LIGHT_GRAY,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: STYLE.SCREEN_PADDING,
   },
-});
+})
