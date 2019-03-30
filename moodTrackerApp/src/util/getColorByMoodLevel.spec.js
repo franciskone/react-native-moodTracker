@@ -1,5 +1,5 @@
 import {getColorByMoodLevel} from "./getColorByMoodLevel"
-import {MOOD_COLOR} from "../constants"
+import {MOOD_COLOR} from "./constants"
 
 describe('getColorByMoodLevel', () => {
   test("it returns the 'max bad' color", () => expect(getColorByMoodLevel(1)).toEqual(MOOD_COLOR.SAD_MAX))

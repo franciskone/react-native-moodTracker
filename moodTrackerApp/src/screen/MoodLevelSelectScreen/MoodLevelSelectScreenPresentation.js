@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, View} from 'react-native'
-import {COLOR, STYLE} from "../../constants"
+import {COLOR, STYLE} from "../../util/constants"
 import {MoodPicker} from "../../components/MoodPicker"
 
 export class MoodLevelSelectScreenPresentation extends React.Component {

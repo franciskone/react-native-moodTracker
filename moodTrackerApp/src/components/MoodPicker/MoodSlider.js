@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native'
 import Slider from '@react-native-community/slider'
 import PropTypes from 'prop-types'
 
-import {COLOR} from "../../constants"
+import {COLOR} from "../../util/constants"
 
 export const MoodSlider = ({onChange}) => {
   return (

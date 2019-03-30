@@ -1,4 +1,4 @@
-import {MOOD_COLOR} from "../constants"
+import {MOOD_COLOR} from "./constants"
 
 const moodColors = {
   1: MOOD_COLOR.SAD_MAX,
