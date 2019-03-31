@@ -6,9 +6,12 @@ import { MoodSlider } from './MoodSlider';
 
 export const MoodPickerPresentation = ({ moodLevel, setMoodLevel }) => (
   <View style={styles.container}>
-    <MoodFace level={moodLevel} />
-    <View style={{ height: '20%' }} />
-    <MoodSlider onChange={setMoodLevel} initValue={moodLevel} />
+    <View style={styles.faceContainer}>
+      <MoodFace level={moodLevel} />
+    </View>
+    <View style={styles.sliderContainer}>
+      <MoodSlider onChange={setMoodLevel} initValue={moodLevel} />
+    </View>
   </View>
 );
 
@@ -25,6 +28,15 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     justifyContent: 'flex-end',
+    alignItems: 'stretch',
+  },
+  faceContainer: {
+    flex: 8,
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sliderContainer: {
+    flex: 1,
+    minHeight: 40,
   },
 });

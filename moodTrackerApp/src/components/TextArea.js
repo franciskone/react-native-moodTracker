@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   textField: {
     width: '100%',
-    height: '40%',
+    height: '50%',
     justifyContent: 'center',
   },
 });

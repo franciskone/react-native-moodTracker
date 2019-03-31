@@ -31,7 +31,6 @@ FeelingPickerItem.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 30,
     backgroundColor: COLOR.WHITE,
     alignItems: 'center',
     justifyContent: 'center',
@@ -39,5 +38,6 @@ const styles = StyleSheet.create({
   text: {
     textTransform: 'capitalize',
     color: STYLE.TEXT.COLOR.DARK,
+    paddingVertical: '9%',
   },
 });
