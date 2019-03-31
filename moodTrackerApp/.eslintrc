@@ -5,7 +5,8 @@
 	"rules": {
 		"import/prefer-default-export": "off",
 		"no-use-before-define": "off",
-		"no-trailing-spaces": [1, { "skipBlankLines": true }]
+		"no-trailing-spaces": [1, { "skipBlankLines": true }],
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
 	},
 	"plugins":  ["jest"],
 	"env": {
