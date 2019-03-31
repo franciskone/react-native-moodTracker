@@ -69,7 +69,7 @@ function checkInFeelingToggleCase(state, action) {
 function checkInCommentSetCase(state, action) {
   return {
     ...state,
-    comment: action.payload.comment,
+    comment: action.payload.comment || null,
   };
 }
 

@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 import { COLOR, STYLE } from '../util/constants';
 
 
-export const Button = ({ action, label }) => (
+export const Button = ({
+  action, label, style, ...props
+}) => (
   <TouchableOpacity
-    style={styles.container}
+    style={[styles.container, style]}
     onPress={action}
     activeOpacity={STYLE.TOUCHABLE_ACTIVE_OPACITY}
+    {...props}
   >
     <Text style={styles.label}>{label}</Text>
   </TouchableOpacity>
@@ -30,5 +33,6 @@ const styles = StyleSheet.create({
   },
   label: {
     color: STYLE.TEXT.COLOR.DARK,
+    textTransform: 'capitalize',
   },
 });
