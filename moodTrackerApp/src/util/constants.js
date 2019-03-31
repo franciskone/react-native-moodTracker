@@ -38,5 +38,12 @@ export const STYLE = {
     COLOR: {
       DARK: COLOR.DARK_GRAY,
     },
+    FONT_SIZE: {
+      XS: 8,
+      S: 10,
+      M: 15,
+      L: 20,
+      XL: 25,
+    },
   },
 };

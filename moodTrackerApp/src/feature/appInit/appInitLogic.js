@@ -1,3 +1,4 @@
+import { StausBar } from 'react-native';
 import { createLogic } from 'redux-logic';
 import { appInitActionType } from './appInitActionType';
 import { insightsAction } from '../insights/insightsAction';

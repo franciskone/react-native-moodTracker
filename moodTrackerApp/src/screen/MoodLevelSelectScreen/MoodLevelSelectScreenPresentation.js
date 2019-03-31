@@ -3,25 +3,32 @@ import {
   SafeAreaView, StyleSheet, View,
 } from 'react-native';
 import { COLOR, STYLE } from '../../util/constants';
-import { Button, MoodPicker } from '../../components';
+import { Button, Header, MoodPicker } from '../../components';
 import { navigationService } from '../../router';
 
 export class MoodLevelSelectScreenPresentation extends React.Component {
   render() {
     return (
-      <View style={styles.screenContainer}>
-        <SafeAreaView />
-        <View style={styles.pickerContainer}>
-          <MoodPicker />
+      <>
+        <Header
+          backAction={() => alert('back')}
+          title="check-in"
+          subtitle="how are you feeling?"
+          skipAction={() => alert('skip')}
+        />
+        <View style={styles.screenContainer}>
+          <View style={styles.pickerContainer}>
+            <MoodPicker />
+          </View>
+          <View style={styles.buttonContainer}>
+            <Button
+              action={navigationService.goToCheckInFeeling}
+              label="Next"
+            />
+          </View>
+          <SafeAreaView />
         </View>
-        <View style={styles.buttonContainer}>
-          <Button
-            action={navigationService.goToCheckInFeeling}
-            label="Next"
-          />
-        </View>
-        <SafeAreaView />
-      </View>
+      </>
     );
   }
 }

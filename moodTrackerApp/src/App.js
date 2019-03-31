@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import addStore from './store/addStore';
 
 import AppRouter, { navigationService } from './router';
@@ -10,7 +10,6 @@ import { appInitAction } from './feature/appInit';
 console.disableYellowBox = true; // TODO franciskone: DELETE
 
 class App extends React.Component {
-  
   componentDidMount() {
     this.props.appInit();
   }
@@ -18,6 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar barStyle="light-content" />
         <AppRouter ref={ref => navigationService.setTopLevelNavigator(ref)} />
       </View>
     );

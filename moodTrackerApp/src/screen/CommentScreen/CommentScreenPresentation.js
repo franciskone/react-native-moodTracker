@@ -14,7 +14,6 @@ export const CommentScreenPresentation = ({
 }) => (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <View style={styles.screenContainer}>
-      <SafeAreaView />
       <KeyboardAvoidingView
         style={styles.keyboardViewContainer}
         behavior="padding"
