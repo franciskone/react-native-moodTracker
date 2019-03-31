@@ -7,7 +7,11 @@ import { Button, TextArea, FeelingBadgeList } from '../../components';
 import { COLOR, STYLE } from '../../util/constants';
 import { navigationService } from '../../router';
 
-export const CommentScreenPresentation = ({ comment, updateComment, feelingSelectedList, checkInSave }) => (
+const computedTextAreaStyle = value => (value == null ? { fontStyle: 'italic' } : {});
+
+export const CommentScreenPresentation = ({
+  comment, updateComment, feelingSelectedList, checkInSave,
+}) => (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <View style={styles.screenContainer}>
       <SafeAreaView />
@@ -20,7 +24,7 @@ export const CommentScreenPresentation = ({ comment, updateComment, feelingSelec
           <TextArea
             value={comment}
             onChangeText={updateComment}
-            style={styles.textAreaStyle}
+            style={computedTextAreaStyle(comment)}
             placeholder="Type your optional note here..."
             placeholderTextColor={COLOR.GRAY}
           />
@@ -62,9 +66,6 @@ const styles = StyleSheet.create({
   keyboardViewContent: {
     paddingVertical: STYLE.PADDING.LARGE,
     justifyContent: 'flex-end',
-  },
-  textAreaStyle: {
-    fontStyle: 'italic',
   },
   buttonStyle: {
     marginTop: STYLE.PADDING.XLARGE,
