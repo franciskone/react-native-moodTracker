@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   updateComment: comment => dispatch(checkInAction.checkInCommentSet(comment)),
+  checkInSave: () => dispatch(checkInAction.checkInSave()),
 });
 
 export const CommentScreenConnector = connect(mapStateToProps, mapDispatchToProps)(CommentScreenPresentation);

@@ -1,7 +1,7 @@
 import { checkInActionType } from './checkInActionType';
 
 export const checkInInitState = {
-  moodLevel: null,
+  moodLevel: 4,
   feelingSelectedList: [],
   comment: null,
   feelingOptions: [
@@ -76,7 +76,7 @@ function checkInCommentSetCase(state, action) {
 function checkInResetCase(state, action) {
   return {
     ...state,
-    moodLevel: null,
+    moodLevel: 4,
     feelingSelectedList: [],
     comment: null,
   };

@@ -1,17 +1,36 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, View } from 'react-native';
 import addStore from './store/addStore';
 
 import AppRouter, { navigationService } from './router';
 import { COLOR } from './util/constants';
+import { appInitAction } from './feature/appInit';
 
-const App = () => (
-  <View style={styles.container}>
-    <AppRouter ref={ref => navigationService.setTopLevelNavigator(ref)} />
-  </View>
-);
+console.disableYellowBox = true; // TODO franciskone: DELETE
 
-export default addStore(App);
+class App extends React.Component {
+  
+  componentDidMount() {
+    this.props.appInit();
+  }
+  
+  render() {
+    return (
+      <View style={styles.container}>
+        <AppRouter ref={ref => navigationService.setTopLevelNavigator(ref)} />
+      </View>
+    );
+  }
+}
+
+const mapStateToProps = (state, ownProps) => ({});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  appInit: () => dispatch(appInitAction.init()),
+});
+
+export default addStore(connect(mapStateToProps, mapDispatchToProps)(App));
 
 const styles = StyleSheet.create({
   container: {

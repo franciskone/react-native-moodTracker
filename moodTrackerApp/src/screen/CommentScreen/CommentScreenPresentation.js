@@ -5,9 +5,9 @@ import {
 import PropTypes from 'prop-types';
 import { Button, TextArea, FeelingBadgeList } from '../../components';
 import { COLOR, STYLE } from '../../util/constants';
-import {navigationService} from "../../router"
+import { navigationService } from '../../router';
 
-export const CommentScreenPresentation = ({ comment, updateComment, feelingSelectedList }) => (
+export const CommentScreenPresentation = ({ comment, updateComment, feelingSelectedList, checkInSave }) => (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <View style={styles.screenContainer}>
       <SafeAreaView />
@@ -25,7 +25,10 @@ export const CommentScreenPresentation = ({ comment, updateComment, feelingSelec
             placeholderTextColor={COLOR.GRAY}
           />
           <Button
-            action={navigationService.goToInsights}
+            action={() => {
+              checkInSave();
+              navigationService.goToInsights();
+            }}
             label="finish"
             style={styles.buttonStyle}
           />
@@ -40,6 +43,7 @@ CommentScreenPresentation.propTypes = {
   comment: PropTypes.string.isRequired,
   updateComment: PropTypes.func.isRequired,
   feelingSelectedList: PropTypes.isRequired,
+  checkInSave: PropTypes.func.isRequired,
 };
 CommentScreenPresentation.defaultProps = {};
 
