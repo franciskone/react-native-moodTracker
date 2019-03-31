@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingTop: STYLE.PADDING.LARGE,
     paddingBottom: STYLE.PADDING.XLARGE,
+    paddingHorizontal: STYLE.PADDING.SMALL,
   },
   
   mainSectionContainer: {
