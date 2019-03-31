@@ -2,7 +2,7 @@ import { checkInActionType } from './checkInActionType';
 
 export const checkInInitState = {
   moodLevel: null,
-  feelingList: [],
+  feelingSelectedList: [],
   comment: null,
   feelingOptions: [
     { id: 1, label: 'depressed' },
@@ -19,8 +19,7 @@ export const checkInInitState = {
 export const checkInReducer = (state = checkInInitState, action) => {
   const reducers = {
     [checkInActionType.CHECK_IN_MOOD_LEVEL_SET]: checkInMoodLevelSetCase,
-    [checkInActionType.CHECK_IN_FEELING_ADD]: checkInFeelingAddCase,
-    [checkInActionType.CHECK_IN_FEELING_REMOVE]: checkInFeelingRemoveCase,
+    [checkInActionType.CHECK_IN_FEELING_TOGGLE]: checkInFeelingToggleCase,
     [checkInActionType.CHECK_IN_COMMENT_SET]: checkInCommentSetCase,
     [checkInActionType.CHECK_IN_RESET]: checkInResetCase,
     default: () => state,
@@ -49,27 +48,22 @@ function checkInMoodLevelSetCase(state, action) {
   };
 }
 
-function checkInFeelingAddCase(state, action) {
+function checkInFeelingToggleCase(state, action) {
   const { feelingId } = action.payload;
-  const { feelingList } = state;
+  const { feelingSelectedList } = state;
 
-  const newFeelingList = feelingId != null && !feelingList.includes(feelingId)
-    ? [...feelingList, feelingId]
-    : feelingList;
-
-  return {
-    ...state,
-    feelingList: newFeelingList,
-  };
-}
-
-function checkInFeelingRemoveCase(state, action) {
-  const { feelingId } = action.payload;
-
-  return {
-    ...state,
-    feelingList: state.feelingList.filter(id => id !== feelingId),
-  };
+  if (feelingId != null) {
+    const newFeelingList = !feelingSelectedList.includes(feelingId)
+      ? [...feelingSelectedList, feelingId]
+      : feelingSelectedList.filter(id => id !== feelingId);
+  
+    return {
+      ...state,
+      feelingSelectedList: newFeelingList,
+    };
+  }
+  
+  return state;
 }
 
 function checkInCommentSetCase(state, action) {
@@ -83,7 +77,7 @@ function checkInResetCase(state, action) {
   return {
     ...state,
     moodLevel: null,
-    feelingList: [],
+    feelingSelectedList: [],
     comment: null,
   };
 }

@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { MoodLevelSelectScreenPresentation } from './screen/MoodLevelSelectScreen';
 import addStore from './store/addStore';
+// import { MoodLevelSelectScreenPresentation } from './screen/MoodLevelSelectScreen';
+import { FeelingSelectScreenPresentation } from './screen/FeelingsSelectScreen/FeelingSelectScreenPresentation';
 
 const App = () => (
   <View style={styles.container}>
-    <MoodLevelSelectScreenPresentation />
+    <FeelingSelectScreenPresentation />
   </View>
 );
 

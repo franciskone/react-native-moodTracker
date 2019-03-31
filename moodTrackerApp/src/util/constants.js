@@ -34,4 +34,9 @@ export const STYLE = {
     SMALL: 5,
   },
   TOUCHABLE_ACTIVE_OPACITY: 0.8,
+  TEXT: {
+    COLOR: {
+      DARK: COLOR.DARK_GRAY,
+    },
+  },
 };

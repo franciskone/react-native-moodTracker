@@ -28,7 +28,7 @@ describe('insightsAction', () => {
       const checkInList = [
         {
           moodLevel: 3,
-          feelingList: [1, 3],
+          feelingSelectedList: [1, 3],
           comment: 'test comment',
           timestamp: 1553984521,
         },

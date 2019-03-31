@@ -1,17 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { COLOR, STYLE } from '../util/constants';
 
 
 export const Button = ({ action, label }) => (
-  <TouchableHighlight
+  <TouchableOpacity
     style={styles.container}
     onPress={action}
     activeOpacity={STYLE.TOUCHABLE_ACTIVE_OPACITY}
   >
     <Text style={styles.label}>{label}</Text>
-  </TouchableHighlight>
+  </TouchableOpacity>
 );
 
 Button.propTypes = {
@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   label: {
-    color: COLOR.DARK_GRAY,
+    color: STYLE.TEXT.COLOR.DARK,
   },
 });

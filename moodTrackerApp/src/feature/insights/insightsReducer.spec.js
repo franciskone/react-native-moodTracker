@@ -26,7 +26,7 @@ describe('insightsReducer', () => {
       const checkInList = [
         {
           moodLevel: null,
-          feelingList: [],
+          feelingSelectedList: [],
           comment: null,
           timestamp: 1553984521,
         },
@@ -61,7 +61,7 @@ describe('insightsReducer', () => {
       const checkInList = [
         {
           moodLevel: null,
-          feelingList: [],
+          feelingSelectedList: [],
           comment: null,
           timestamp: 1553984521,
         },

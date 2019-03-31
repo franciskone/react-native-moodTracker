@@ -14,7 +14,7 @@ export const insightsInitState = {
   checkInList: [
     // {
     //   moodLevel: null,
-    //   feelingList: [],
+    //   feelingSelectedList: [],
     //   comment: null,
     //   timestamp: 1553984521,
     // }

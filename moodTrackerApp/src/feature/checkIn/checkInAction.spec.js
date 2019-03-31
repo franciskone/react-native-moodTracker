@@ -18,34 +18,18 @@ describe('checkIn actions', () => {
       });
   });
 
-  test('checkInFeelingAdd returns the correct action object', () => {
+  test('checkInFeelingToggle returns the correct action object', () => {
     const testFeelingId = 1;
 
-    expect(checkInAction.checkInFeelingAdd(testFeelingId))
+    expect(checkInAction.checkInFeelingToggle(testFeelingId))
       .toEqual({
-        type: checkInActionType.CHECK_IN_FEELING_ADD,
+        type: checkInActionType.CHECK_IN_FEELING_TOGGLE,
         payload: { feelingId: testFeelingId },
       });
 
-    expect(checkInAction.checkInFeelingAdd())
+    expect(checkInAction.checkInFeelingToggle())
       .toEqual({
-        type: checkInActionType.CHECK_IN_FEELING_ADD,
-        payload: { feelingId: null },
-      });
-  });
-
-  test('checkInFeelingRemove returns the correct action object', () => {
-    const testFeelingId = 1;
-
-    expect(checkInAction.checkInFeelingRemove(testFeelingId))
-      .toEqual({
-        type: checkInActionType.CHECK_IN_FEELING_REMOVE,
-        payload: { feelingId: testFeelingId },
-      });
-
-    expect(checkInAction.checkInFeelingRemove())
-      .toEqual({
-        type: checkInActionType.CHECK_IN_FEELING_REMOVE,
+        type: checkInActionType.CHECK_IN_FEELING_TOGGLE,
         payload: { feelingId: null },
       });
   });

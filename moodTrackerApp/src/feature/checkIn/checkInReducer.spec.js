@@ -66,77 +66,40 @@ describe('checkIn reducer', () => {
     });
   });
 
-  describe('checkInFeelingAddCase', () => {
-    test('adds feelingId to the feelingList if not included', () => {
+  describe('checkInFeelingToggleCase', () => {
+    test('adds feelingId to the feelingSelectedList if not included', () => {
       const testInitState = {
         ...checkInInitState,
-        feelingList: [2],
+        feelingSelectedList: [2],
       };
 
       const finalState = {
         ...testInitState,
-        feelingList: [2, 4],
+        feelingSelectedList: [2, 4],
       };
 
       testReducer(
         testInitState,
         finalState,
-        checkInAction.checkInFeelingAdd(4),
+        checkInAction.checkInFeelingToggle(4),
       );
     });
 
-    test('discards feelingId if already present in feelingList', () => {
+    test('remove feelingId if already present in feelingSelectedList', () => {
       const testInitState = {
         ...checkInInitState,
-        feelingList: [2],
+        feelingSelectedList: [2, 4],
       };
-
+      
       const finalState = {
         ...testInitState,
+        feelingSelectedList: [2],
       };
-
+  
       testReducer(
         testInitState,
         finalState,
-        checkInAction.checkInFeelingAdd(2),
-      );
-    });
-  });
-
-  describe('checkInFeelingRemoveCase', () => {
-    test('removes feelingId if it is included in the feelingList ', () => {
-      const testInitState = {
-        ...checkInInitState,
-        feelingList: [2, 3],
-      };
-
-      const finalState = {
-        ...testInitState,
-        feelingList: [2],
-      };
-
-      testReducer(
-        testInitState,
-        finalState,
-        checkInAction.checkInFeelingRemove(3),
-      );
-    });
-
-    test('returns the same feelingList if feelingId is not included', () => {
-      const testInitState = {
-        ...checkInInitState,
-        feelingList: [2, 3],
-      };
-
-      const finalState = {
-        ...testInitState,
-        feelingList: [2, 3],
-      };
-
-      testReducer(
-        testInitState,
-        finalState,
-        checkInAction.checkInFeelingRemove(4),
+        checkInAction.checkInFeelingToggle(4),
       );
     });
   });
@@ -195,7 +158,7 @@ describe('checkIn reducer', () => {
     test('checkInResetCase with checkIn data already in place', () => {
       const testInitState = {
         moodLevel: 4,
-        feelingList: [3, 2],
+        feelingSelectedList: [3, 2],
         comment: 'test comment',
         feelingOptions: [
           { id: 1, label: 'depressed' },

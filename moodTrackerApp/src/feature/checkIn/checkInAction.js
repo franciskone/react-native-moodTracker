@@ -3,8 +3,7 @@ import { actionCreator } from '../../util';
 
 export const checkInAction = {
   checkInMoodLevelSet,
-  checkInFeelingAdd,
-  checkInFeelingRemove,
+  checkInFeelingToggle,
   checkInCommentSet,
   checkInReset,
 
@@ -20,16 +19,9 @@ function checkInMoodLevelSet(moodLevel = null) {
   );
 }
 
-function checkInFeelingAdd(feelingId = null) {
+function checkInFeelingToggle(feelingId = null) {
   return actionCreator(
-    checkInActionType.CHECK_IN_FEELING_ADD,
-    { feelingId },
-  );
-}
-
-function checkInFeelingRemove(feelingId = null) {
-  return actionCreator(
-    checkInActionType.CHECK_IN_FEELING_REMOVE,
+    checkInActionType.CHECK_IN_FEELING_TOGGLE,
     { feelingId },
   );
 }

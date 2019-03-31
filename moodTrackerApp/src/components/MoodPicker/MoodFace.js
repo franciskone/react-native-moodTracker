@@ -26,6 +26,8 @@ export const MoodFace = ({ level }) => (
       { tintColor: getColorByMoodLevel(level) },
     ]}
     source={getFaceByMoodLevel(level)}
+    resizeMode="contain"
+    resizeMethod="scale"
   />
 );
 
@@ -39,8 +41,8 @@ MoodFace.defaultProps = {
 
 const styles = StyleSheet.create({
   img: {
-    width: 200,
-    height: 200,
+    width: '80%',
+    height: '80%',
     opacity: 1,
   },
 });

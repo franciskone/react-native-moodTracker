@@ -4,23 +4,32 @@ const getLocalState = state => state[ROOT_REDUCER_NAMES.CHECK_IN];
 
 export const checkInSelector = {
   moodLevel,
-  feelingList,
+  feelingSelectedList,
   comment,
-  feelingOptions,
+  feelingFullList,
 };
 
 function moodLevel(state) {
   return getLocalState(state).moodLevel || 4;
 }
 
-function feelingList(state) {
-  return getLocalState(state).feelingList;
+function feelingSelectedList(state) {
+  return getLocalState(state).feelingSelectedList;
 }
 
 function comment(state) {
   return getLocalState(state).comment;
 }
 
-function feelingOptions(state) {
-  return getLocalState(state).feelingOptions;
+function feelingFullList(state) {
+  const { feelingOptions } = getLocalState(state);
+  const feelingSelectedItems = feelingSelectedList(state);
+  
+  return feelingOptions.map((item) => {
+    const isSelected = feelingSelectedItems.includes(item.id);
+    return {
+      ...item,
+      isSelected,
+    };
+  });
 }
