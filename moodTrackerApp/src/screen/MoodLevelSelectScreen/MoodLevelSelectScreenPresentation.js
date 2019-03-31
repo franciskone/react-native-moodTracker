@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import { COLOR, STYLE } from '../../util/constants';
 import { Button, MoodPicker } from '../../components';
+import { navigationService } from '../../router';
 
 export class MoodLevelSelectScreenPresentation extends React.Component {
   render() {
@@ -15,7 +16,7 @@ export class MoodLevelSelectScreenPresentation extends React.Component {
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            action={() => alert('Go To Feelings')}
+            action={navigationService.goToCheckInFeeling}
             label="Next"
           />
         </View>

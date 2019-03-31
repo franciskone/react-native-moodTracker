@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { FeelingPicker } from '../../components/FeelingPicker';
 import { COLOR, STYLE } from '../../util/constants';
 import { Button } from '../../components';
+import { navigationService } from '../../router';
 
 export const FeelingSelectScreenPresentation = () => (
   <View style={styles.screenContainer}>
@@ -14,7 +15,7 @@ export const FeelingSelectScreenPresentation = () => (
     <View style={styles.buttonContainer}>
       <Button
         label="next"
-        action={() => alert('next')}
+        action={navigationService.goToCheckInComment}
       />
     </View>
     <SafeAreaView />

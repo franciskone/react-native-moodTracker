@@ -1,15 +1,13 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import addStore from './store/addStore';
-import { MoodLevelSelectScreen } from './screen/MoodLevelSelectScreen';
-import { FeelingSelectScreen } from './screen/FeelingsSelectScreen';
-import { CommentScreen } from './screen/CommentScreen';
+
+import AppRouter, { navigationService } from './router';
+import { COLOR } from './util/constants';
 
 const App = () => (
   <View style={styles.container}>
-     <MoodLevelSelectScreen />
-     {/*<FeelingSelectScreen />*/}
-    {/*<CommentScreen />*/}
+    <AppRouter ref={ref => navigationService.setTopLevelNavigator(ref)} />
   </View>
 );
 
@@ -19,7 +17,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: 'stretch',
+    backgroundColor: COLOR.ULTRA_LIGHT_GRAY,
   },
 });

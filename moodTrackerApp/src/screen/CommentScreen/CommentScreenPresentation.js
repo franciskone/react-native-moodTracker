@@ -5,6 +5,7 @@ import {
 import PropTypes from 'prop-types';
 import { Button, TextArea, FeelingBadgeList } from '../../components';
 import { COLOR, STYLE } from '../../util/constants';
+import {navigationService} from "../../router"
 
 export const CommentScreenPresentation = ({ comment, updateComment, feelingSelectedList }) => (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -24,7 +25,7 @@ export const CommentScreenPresentation = ({ comment, updateComment, feelingSelec
             placeholderTextColor={COLOR.GRAY}
           />
           <Button
-            action={() => alert('finish')}
+            action={navigationService.goToInsights}
             label="finish"
             style={styles.buttonStyle}
           />
