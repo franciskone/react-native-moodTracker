@@ -28,6 +28,19 @@ describe('checkInSelector', () => {
     expect(checkInSelector.feelingSelectedList(testState)).toEqual([2]);
   });
   
+  test('feelingSelectedEnhancedList', () => {
+    const testState = getState(
+      checkInReducer(
+        checkInInitState,
+        checkInAction.checkInFeelingToggle(2),
+      ),
+    );
+    
+    expect(checkInSelector.feelingSelectedEnhancedList(testState)).toEqual([{
+      id: 2, label: 'bored', isSelected: true,
+    }]);
+  });
+  
   test('comment', () => {
     const testComment = 'test comment';
     

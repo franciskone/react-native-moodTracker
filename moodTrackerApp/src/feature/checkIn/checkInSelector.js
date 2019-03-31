@@ -5,6 +5,7 @@ const getLocalState = state => state[ROOT_REDUCER_NAMES.CHECK_IN];
 export const checkInSelector = {
   moodLevel,
   feelingSelectedList,
+  feelingSelectedEnhancedList,
   comment,
   feelingFullList,
 };
@@ -15,6 +16,10 @@ function moodLevel(state) {
 
 function feelingSelectedList(state) {
   return getLocalState(state).feelingSelectedList;
+}
+
+function feelingSelectedEnhancedList(state) {
+  return feelingFullList(state).filter(item => item.isSelected);
 }
 
 function comment(state) {

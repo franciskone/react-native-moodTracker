@@ -1,1 +1,1 @@
-export { MoodLevelSelectScreenPresentation } from './MoodLevelSelectScreenPresentation';
+export { MoodLevelSelectScreenPresentation as MoodLevelSelectScreen } from './MoodLevelSelectScreenPresentation';

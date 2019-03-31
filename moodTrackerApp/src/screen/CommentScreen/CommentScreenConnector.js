@@ -6,6 +6,7 @@ import { checkInAction } from '../../feature/checkIn';
 
 const mapStateToProps = state => ({
   comment: checkInSelector.comment(state),
+  feelingSelectedList: checkInSelector.feelingSelectedEnhancedList(state),
 });
 
 const mapDispatchToProps = dispatch => ({

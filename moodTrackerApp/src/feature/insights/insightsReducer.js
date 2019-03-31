@@ -2,13 +2,13 @@ import { insightsActionTypes } from './insightsActionTypes';
 
 export const insightsInitState = {
   averageMood: {
-    // 1: 10,
-    // 2: 10,
-    // 3: 5,
-    // 4: 5,
-    // 5: 10,
-    // 6: 40,
-    // 7: 20,
+    1: 10,
+    2: 10,
+    3: 5,
+    4: 5,
+    5: 10,
+    6: 40,
+    7: 20,
   },
   checkInAmount: 20,
   checkInList: [
@@ -17,7 +17,14 @@ export const insightsInitState = {
     //   feelingSelectedList: [],
     //   comment: null,
     //   timestamp: 1553984521,
-    // }
+    // },
+    {
+      moodLevel: 2,
+      feelingSelectedList: ['depressed', 'optimistic', 'bored', 'happy'],
+      comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+      timestamp: 1553984521,
+    },
+    
   ],
 };
 

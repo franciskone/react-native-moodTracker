@@ -3,12 +3,10 @@ import {
   Keyboard, KeyboardAvoidingView, SafeAreaView, StyleSheet, View, TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { TextArea } from '../../components/TextArea';
-import { Button } from '../../components';
+import { Button, TextArea, FeelingBadgeList } from '../../components';
 import { COLOR, STYLE } from '../../util/constants';
 
-
-export const CommentScreenPresentation = ({ comment, updateComment }) => (
+export const CommentScreenPresentation = ({ comment, updateComment, feelingSelectedList }) => (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <View style={styles.screenContainer}>
       <SafeAreaView />
@@ -17,6 +15,7 @@ export const CommentScreenPresentation = ({ comment, updateComment }) => (
         behavior="padding"
       >
         <View style={styles.keyboardViewContent}>
+          <FeelingBadgeList list={feelingSelectedList} />
           <TextArea
             value={comment}
             onChangeText={updateComment}
@@ -39,6 +38,7 @@ export const CommentScreenPresentation = ({ comment, updateComment }) => (
 CommentScreenPresentation.propTypes = {
   comment: PropTypes.string.isRequired,
   updateComment: PropTypes.func.isRequired,
+  feelingSelectedList: PropTypes.isRequired,
 };
 CommentScreenPresentation.defaultProps = {};
 
