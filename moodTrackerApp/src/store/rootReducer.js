@@ -8,7 +8,9 @@ export const ROOT_REDUCER_NAMES = {
   INSIGHTS: 'insights',
 };
 
-export const persistedReducersList = [];
+export const persistedReducersList = [
+  ROOT_REDUCER_NAMES.CHECK_IN,
+];
 
 const rootReducer = combineReducers({
   [ROOT_REDUCER_NAMES.CHECK_IN]: checkInReducer,

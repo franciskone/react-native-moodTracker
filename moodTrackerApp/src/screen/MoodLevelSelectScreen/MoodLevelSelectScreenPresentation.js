@@ -1,29 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  SafeAreaView, StyleSheet, View,
+} from 'react-native';
 import { COLOR, STYLE } from '../../util/constants';
-import { MoodPicker } from '../../components/MoodPicker/index';
+import { Button, MoodPicker } from '../../components';
 
 export class MoodLevelSelectScreenPresentation extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {};
-  // }
-
-  // LifeCycle methods
-  // componentWillMount() {}
-  // componentDidMount() {}
-  // componentWillUnmount() {}
-  // componentWillReceiveProps(nextProps) {}
-  // shouldComponentUpdate(nextProps, nextState) {return true}
-  // componentWillUpdate(nextProps, nextState) {}
-  // componentDidUpdate(prevProps, prevState) {}
-
-  // Component methods
-
   render() {
     return (
       <View style={styles.screenContainer}>
-        <MoodPicker />
+        <SafeAreaView />
+        <View style={styles.pickerContainer}>
+          <MoodPicker />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button
+            action={() => alert('Go To Feelings')}
+            label="Next"
+          />
+        </View>
+        <SafeAreaView />
       </View>
     );
   }
@@ -35,7 +31,17 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: COLOR.ULTRA_LIGHT_GRAY,
     justifyContent: 'center',
+    alignItems: 'stretch',
+    paddingHorizontal: STYLE.SCREEN_PADDING + STYLE.PADDING.LARGE,
+    paddingVertical: STYLE.SCREEN_PADDING,
+  },
+  pickerContainer: {
+    flex: 3,
+    justifyContent: 'flex-end',
+  },
+  buttonContainer: {
+    flex: 1,
     alignItems: 'center',
-    padding: STYLE.SCREEN_PADDING,
+    justifyContent: 'flex-end',
   },
 });

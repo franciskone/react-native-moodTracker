@@ -1,44 +1,30 @@
-import React from 'react'
-import {StyleSheet, Text, View} from 'react-native'
-import PropTypes from 'prop-types'
-import {MoodFace} from "./MoodFace"
-import {MoodSlider} from "./MoodSlider"
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
+import { MoodFace } from './MoodFace';
+import { MoodSlider } from './MoodSlider';
 
-export class MoodPickerPresentation extends React.Component {
-  state = {
-    moodLevel: 4,
-  }
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {};
-  // }
-  
-  // LifeCycle methods
-  // componentWillMount() {}
-  // componentDidMount() {}
-  // componentWillUnmount() {}
-  // componentWillReceiveProps(nextProps) {}
-  // shouldComponentUpdate(nextProps, nextState) {return true}
-  // componentWillUpdate(nextProps, nextState) {}
-  // componentDidUpdate(prevProps, prevState) {}
-  
-  // Component methods
-  onMoodChange = (moodLevel) => this.setState({moodLevel})
-  
-  render() {
-    return (<View style={{
-      flex: 1,
-      width: '100%',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <MoodFace level={this.state.moodLevel}/>
-      <MoodSlider onChange={this.onMoodChange}/>
-    </View>)
-  }
-}
+export const MoodPickerPresentation = ({ moodLevel, setMoodLevel }) => (
+  <View style={styles.container}>
+    <MoodFace level={moodLevel} />
+    <View style={{ height: '20%' }} />
+    <MoodSlider onChange={setMoodLevel} initValue={moodLevel} />
+  </View>
+);
 
-MoodPickerPresentation.propTypes = {}
-MoodPickerPresentation.defaultProps = {}
+MoodPickerPresentation.propTypes = {
+  moodLevel: PropTypes.number,
+  setMoodLevel: PropTypes.func.isRequired,
+};
+MoodPickerPresentation.defaultProps = {
+  moodLevel: 4,
+};
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+});

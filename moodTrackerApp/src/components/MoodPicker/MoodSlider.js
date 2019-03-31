@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 import { COLOR } from '../../util/constants';
 
-export const MoodSlider = ({ onChange }) => (
+export const MoodSlider = ({ onChange, initValue }) => (
   <Slider
     style={styles.sliderContainer}
-    value={4}
+    value={initValue}
     minimumValue={1}
     maximumValue={7}
     minimumTrackTintColor={COLOR.GRAY}
@@ -20,9 +20,11 @@ export const MoodSlider = ({ onChange }) => (
 
 MoodSlider.propTypes = {
   onChange: PropTypes.func,
+  initValue: PropTypes.number,
 };
 MoodSlider.defaultProps = {
   onChange: () => console.warn("MoodPicker Slider requires 'onChange' prop"),
+  initValue: 4,
 };
 
 const styles = StyleSheet.create({

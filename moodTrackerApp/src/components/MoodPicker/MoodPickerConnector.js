@@ -1,11 +1,17 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import { Presentation } from './Presentation';
+import { checkInSelector } from '../../feature/checkIn/checkInSelector';
+import { checkInAction } from '../../feature/checkIn';
+import { MoodPickerPresentation } from './MoodPickerPresentation';
 
-const mapStateToProps = (state, ownProps) => ({
-
+const mapStateToProps = state => ({
+  moodLevel: checkInSelector.moodLevel(state),
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({});
+const mapDispatchToProps = dispatch => ({
+  setMoodLevel: level => dispatch(checkInAction.checkInMoodLevelSet(level)),
+});
 
-export const Connector = connect(mapStateToProps, mapDispatchToProps)(Presentation);
+export const MoodPickerConnector = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(MoodPickerPresentation);

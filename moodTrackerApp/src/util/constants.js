@@ -1,13 +1,14 @@
 export const COLOR = {
+  WHITE: '#FFFFFF',
   DARK_GRAY: '#4A4A4A',
   GRAY: '#A9A9A9', // SLIDER GRAY
   LIGHT_GRAY: '#E0E0E0', // FACE GRAY
   ULTRA_LIGHT_GRAY: '#F2F2F2', // FACE GRAY
   DARK_BLUE: '#1F4D75',
   LIGHT_BLUE: '#4AA1D8',
-  AQUA: '#55B1C9',
+  AQUA: '#00C2BF',
   DARK_GREEN: '#87AD35',
-  LIGHT_GREEN: '#94BF3D',
+  LIGHT_GREEN: '#94BF38',
   ORANGE: '#F6BC41',
 };
 
@@ -22,5 +23,15 @@ export const MOOD_COLOR = {
 };
 
 export const STYLE = {
+  PADDING: {
+    SMALL: 5,
+    MEDIUM: 10,
+    LARGE: 20,
+    XLARGE: 30,
+  },
   SCREEN_PADDING: 20,
+  BORDER_RADIUS: {
+    SMALL: 5,
+  },
+  TOUCHABLE_ACTIVE_OPACITY: 0.8,
 };
