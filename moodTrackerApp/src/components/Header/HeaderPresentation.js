@@ -3,24 +3,19 @@ import {
   StyleSheet, Text, SafeAreaView, View, TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import { COLOR, STYLE } from '../../util/constants';
 
 const computedBackGroundColor = (color, overrideColor) => overrideColor || color || COLOR.DARK_GRAY;
 
-const SideButton = ({ label, fontSize = 15, onPress }) => (
+const SideButton = ({ children, onPress }) => (
   <TouchableOpacity
     style={styles.sideButton}
     activeOpacity={STYLE.TOUCHABLE_ACTIVE_OPACITY}
     onPress={onPress}
   >
-    <Text
-      style={[
-        styles.sideButtonText,
-        { fontSize },
-      ]}
-    >
-      {label}
-    </Text>
+    {children}
   </TouchableOpacity>
 );
 
@@ -33,7 +28,12 @@ export const HeaderPresentation = ({
   >
     <View style={styles.container}>
       <View style={styles.sideButtonContainer}>
-        { backAction && <SideButton label="<" onPress={backAction} /> }
+        { backAction
+        && (
+          <SideButton onPress={backAction}>
+            <Icon name="ios-arrow-round-back" size={30} color={COLOR.DARK_GRAY} />
+          </SideButton>
+        ) }
       </View>
       
       <View style={styles.mainSectionContainer}>
@@ -42,7 +42,20 @@ export const HeaderPresentation = ({
       </View>
       
       <View style={styles.sideButtonContainer}>
-        { skipAction && <SideButton label="skip" fontSize={15} onPress={skipAction} /> }
+        { skipAction
+          && (
+          <SideButton onPress={skipAction}>
+            <Text
+              style={[
+                styles.sideButtonText,
+                { fontSize: 15 },
+              ]}
+            >
+              skip
+            </Text>
+          </SideButton>
+          )
+        }
       </View>
     </View>
   </SafeAreaView>
@@ -72,7 +85,6 @@ const styles = StyleSheet.create({
   },
   
   mainSectionContainer: {
-    backgroundColor: 'green',
     alignItems: 'center',
     flex: 3,
   },
@@ -90,7 +102,6 @@ const styles = StyleSheet.create({
   },
   
   sideButtonContainer: {
-    backgroundColor: 'red',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -103,6 +114,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 50,
+    shadowColor: 'rgba(0,0,0, .3)', // IOS
+    shadowOffset: { height: 1, width: 1 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    elevation: 2, // Android
   },
   sideButtonText: {
     color: COLOR.DARK_GRAY,

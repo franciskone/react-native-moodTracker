@@ -2,6 +2,8 @@ import React from 'react';
 import {
   StyleSheet, Text, TouchableOpacity, View,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import PropTypes from 'prop-types';
 import { COLOR, STYLE } from '../../util/constants';
 
@@ -13,7 +15,7 @@ export const FeelingBadgePresentation = ({ data: { label }, action }) => (
   >
     <Text style={styles.label}>{label}</Text>
     <View style={styles.toggleButton}>
-      <Text style={styles.toggleButtonIcon}>✕</Text>
+      <Icon name="ios-close" size={20} color={COLOR.WHITE} />
     </View>
   </TouchableOpacity>
 );
@@ -47,7 +49,6 @@ const styles = StyleSheet.create({
   toggleButton: {
     backgroundColor: COLOR.GRAY,
     color: COLOR.WHITE,
-    padding: STYLE.PADDING.SMALL,
     borderRadius: 50,
     width: 20,
     height: 20,
