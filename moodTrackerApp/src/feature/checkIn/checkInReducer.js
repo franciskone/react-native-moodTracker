@@ -20,6 +20,7 @@ export const checkInReducer = (state = checkInInitState, action) => {
   const reducers = {
     [checkInActionType.CHECK_IN_MOOD_LEVEL_SET]: checkInMoodLevelSetCase,
     [checkInActionType.CHECK_IN_FEELING_TOGGLE]: checkInFeelingToggleCase,
+    [checkInActionType.CHECK_IN_FEELING_RESET]: checkInFeelingResetCase,
     [checkInActionType.CHECK_IN_COMMENT_SET]: checkInCommentSetCase,
     [checkInActionType.CHECK_IN_RESET]: checkInResetCase,
     default: () => state,
@@ -65,6 +66,14 @@ function checkInFeelingToggleCase(state, action) {
   
   return state;
 }
+
+function checkInFeelingResetCase(state) {
+  return {
+    ...state,
+    feelingSelectedList: [],
+  };
+}
+
 
 function checkInCommentSetCase(state, action) {
   return {

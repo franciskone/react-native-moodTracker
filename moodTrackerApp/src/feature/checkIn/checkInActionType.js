@@ -3,6 +3,7 @@ const prefix = 'checkIn';
 export const checkInActionType = {
   CHECK_IN_MOOD_LEVEL_SET: `${prefix}/CHECK_IN_MOOD_LEVEL_SET`,
   CHECK_IN_FEELING_TOGGLE: `${prefix}/CHECK_IN_FEELING_TOGGLE`,
+  CHECK_IN_FEELING_RESET: `${prefix}/CHECK_IN_FEELING_RESET`,
   CHECK_IN_COMMENT_SET: `${prefix}/CHECK_IN_COMMENT_SET`,
   CHECK_IN_RESET: `${prefix}/CHECK_IN_RESET`,
 

@@ -11,10 +11,8 @@ export class MoodLevelSelectScreenPresentation extends React.Component {
     return (
       <>
         <Header
-          backAction={() => alert('back')}
           title="check-in"
           subtitle="how are you feeling?"
-          skipAction={() => alert('skip')}
         />
         <View style={styles.screenContainer}>
           <View style={styles.pickerContainer}>

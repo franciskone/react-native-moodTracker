@@ -4,6 +4,7 @@ import { actionCreator } from '../../util';
 export const checkInAction = {
   checkInMoodLevelSet,
   checkInFeelingToggle,
+  checkInFeelingReset,
   checkInCommentSet,
   checkInReset,
 
@@ -24,6 +25,10 @@ function checkInFeelingToggle(feelingId = null) {
     checkInActionType.CHECK_IN_FEELING_TOGGLE,
     { feelingId },
   );
+}
+
+function checkInFeelingReset() {
+  return actionCreator(checkInActionType.CHECK_IN_RESET);
 }
 
 function checkInCommentSet(comment = '') {

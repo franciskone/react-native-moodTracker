@@ -5,24 +5,33 @@ import {
 import PropTypes from 'prop-types';
 import { FeelingPicker } from '../../components/FeelingPicker';
 import { COLOR, STYLE } from '../../util/constants';
-import { Button } from '../../components';
+import { Button, Header } from '../../components';
 import { navigationService } from '../../router';
 
-export const FeelingSelectScreenPresentation = () => (
-  <View style={styles.screenContainer}>
-    <SafeAreaView />
-    <FeelingPicker />
-    <View style={styles.buttonContainer}>
-      <Button
-        label="next"
-        action={navigationService.goToCheckInComment}
-      />
+export const FeelingSelectScreenPresentation = ({skip}) => (
+  <>
+    <Header
+      backAction={navigationService.goToCheckInMood}
+      title="feelings"
+      subtitle="What feeling(s) best describe your current mood?"
+      skipAction={skip}
+    />
+    <View style={styles.screenContainer}>
+      <FeelingPicker />
+      <View style={styles.buttonContainer}>
+        <Button
+          label="next"
+          action={navigationService.goToCheckInComment}
+        />
+      </View>
+      <SafeAreaView />
     </View>
-    <SafeAreaView />
-  </View>
+  </>
 );
 
-FeelingSelectScreenPresentation.propTypes = {};
+FeelingSelectScreenPresentation.propTypes = {
+  skip: PropTypes.func.isRequired,
+};
 FeelingSelectScreenPresentation.defaultProps = {};
 
 const styles = StyleSheet.create({

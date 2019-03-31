@@ -1,1 +1,1 @@
-export { FeelingSelectScreenPresentation as FeelingSelectScreen } from './FeelingSelectScreenPresentation';
+export { FeelingSelectScreenConnector as FeelingSelectScreen } from './FeelingSelectScreenConnector';

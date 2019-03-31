@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StyleSheet, Text, SafeAreaView, View, TouchableOpacity,
+  StyleSheet, Text, SafeAreaView, View, TouchableOpacity, Keyboard, TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -22,6 +22,7 @@ const SideButton = ({ children, onPress }) => (
 export const HeaderPresentation = ({
   color, overrideColor, title, subtitle, skipAction, backAction,
 }) => (
+  <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
   <SafeAreaView style={
     { backgroundColor: computedBackGroundColor(color, overrideColor) }
   }
@@ -59,6 +60,7 @@ export const HeaderPresentation = ({
       </View>
     </View>
   </SafeAreaView>
+  </TouchableWithoutFeedback>
 );
 
 HeaderPresentation.propTypes = {
@@ -99,6 +101,7 @@ const styles = StyleSheet.create({
     fontSize: STYLE.TEXT.FONT_SIZE.M,
     fontWeight: '200',
     marginTop: STYLE.PADDING.SMALL,
+    textAlign: 'center',
   },
   
   sideButtonContainer: {
