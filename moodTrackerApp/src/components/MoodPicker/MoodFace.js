@@ -19,11 +19,12 @@ const getFaceByMoodLevel = (level) => {
   return faces[level] || faces[4];
 };
 
-export const MoodFace = ({ level }) => (
+export const MoodFace = ({ level, style }) => (
   <Image
     style={[
       styles.img,
       { tintColor: getColorByMoodLevel(level) },
+      style,
     ]}
     source={getFaceByMoodLevel(level)}
     resizeMode="contain"

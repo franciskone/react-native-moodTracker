@@ -5,17 +5,14 @@ import {
 import PropTypes from 'prop-types';
 import { MoodHistoryItem } from './MoodHistoryItem';
 
-const keyExtractor = item => item.id;
+const keyExtractor = item => item.id + Math.random();
 
 export const MoodHistoryList = ({ data }) => (
-  <View style={styles.container}>
-    <FlatList
-      data={data}
-      renderItem={({ item }) => <MoodHistoryItem data={item} />}
-      keyExtractor={keyExtractor}
-      contentContainerStyle={styles.flatList}
-    />
-  </View>
+  <FlatList
+    data={data}
+    renderItem={({ item }) => <MoodHistoryItem data={item} />}
+    contentContainerStyle={styles.flatList}
+  />
 );
 
 MoodHistoryList.propTypes = {
@@ -30,12 +27,8 @@ MoodHistoryList.propTypes = {
 MoodHistoryList.defaultProps = {};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'green',
-  },
+
   flatList: {
-    height: '100%',
     backgroundColor: 'purple',
   },
 });
