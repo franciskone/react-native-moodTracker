@@ -1,7 +1,7 @@
 import { insightsActionTypes } from './insightsActionTypes';
 
 export const insightsInitState = {
-  averageMood: {},
+  averageMood: [],
   checkInAmount: 0,
   checkInList: [],
 };

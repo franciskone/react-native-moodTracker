@@ -1,13 +1,34 @@
 export const getInsightsSuccess = () => ({
-  averageMood: {
-    1: 0,
-    2: 20,
-    3: 0,
-    4: 20,
-    5: 40,
-    6: 20,
-    7: 0,
-  },
+  averageMood: [
+    {
+      key: 4,
+      value: 30,
+    },
+    {
+      key: 1,
+      value: 20,
+    },
+    {
+      key: 2,
+      value: 0,
+    },
+    {
+      key: 3,
+      value: 0,
+    },
+    {
+      key: 5,
+      value: 0,
+    },
+    {
+      key: 6,
+      value: 0,
+    },
+    {
+      key: 7,
+      value: 50,
+    },
+  ],
   checkInAmount: 5,
   checkInList: [
     {

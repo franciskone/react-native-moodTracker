@@ -1,1 +1,1 @@
-export { InsightsScreenPresentation as InsightsScreen } from './InsightsScreenPresentation';
+export { InsightsScreenConnector as InsightsScreen } from './InsightsScreenConnector';

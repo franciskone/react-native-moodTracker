@@ -41,8 +41,8 @@ MoodFace.defaultProps = {
 
 const styles = StyleSheet.create({
   img: {
-    width: '80%',
-    height: '80%',
+    width: '70%',
+    height: '70%',
     opacity: 1,
   },
 });
