@@ -33,7 +33,8 @@ export const CommentScreenPresentation = ({
             <TextArea
               value={comment}
               onChangeText={updateComment}
-              style={computedTextAreaStyle(comment)}
+              containerStyle={styles.textAreaContainer}
+              style={[computedTextAreaStyle(comment), styles.textArea]}
               placeholder="Type your optional note here..."
               placeholderTextColor={COLOR.GRAY}
             />
@@ -76,6 +77,12 @@ const styles = StyleSheet.create({
   keyboardViewContent: {
     paddingVertical: STYLE.PADDING.LARGE,
     justifyContent: 'flex-end',
+  },
+  textAreaContainer: {
+    height: '40%',
+  },
+  textArea: {
+  
   },
   buttonStyle: {
     marginTop: STYLE.PADDING.XLARGE,

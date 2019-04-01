@@ -5,38 +5,39 @@ import { COLOR, STYLE } from '../util/constants';
 
 
 export const TextArea = ({
-  value, onChange, style, ...props
+  value, onChange, style, containerStyle, ...props
 }) => (
-  <View style={styles.container}>
-    <TextInput
-      style={[styles.textField, style]}
-      onChangeText={onChange}
-      value={value}
-      multiline
-      numberOfLines={4}
-      {...props}
-    />
-  </View>
+    <View style={[styles.container, containerStyle]}>
+      <TextInput
+        style={[styles.textField, style]}
+        onChangeText={onChange}
+        value={value}
+        multiline
+        numberOfLines={4}
+        {...props}
+      />
+    </View>
 );
 
 TextArea.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   style: TextInput.propTypes.style,
+  containerStyle: TextInput.propTypes.style,
 };
 TextArea.defaultProps = {
   style: StyleSheet.create({}),
+  containerStyle: StyleSheet.create({}),
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: STYLE.PADDING.LARGE,
-    paddingVertical: STYLE.PADDING.MEDIUM,
     backgroundColor: COLOR.WHITE,
+    paddingTop: STYLE.PADDING.MEDIUM,
   },
   textField: {
-    width: '100%',
-    height: '50%',
+    flex: 1,
     justifyContent: 'center',
+    padding: STYLE.PADDING.LARGE,
   },
 });
