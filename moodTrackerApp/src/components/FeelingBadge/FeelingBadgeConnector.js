@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   action: () => dispatch(checkInAction.checkInFeelingToggle(ownProps.data.id)),
-  // action: () => alert(`delete feeling: ${ownProps.data.id}`),
 });
 
 export const FeelingBadgeConnector = connect(

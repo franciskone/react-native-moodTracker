@@ -28,7 +28,7 @@ function checkInFeelingToggle(feelingId = null) {
 }
 
 function checkInFeelingReset() {
-  return actionCreator(checkInActionType.CHECK_IN_RESET);
+  return actionCreator(checkInActionType.CHECK_IN_FEELING_RESET);
 }
 
 function checkInCommentSet(comment = '') {
