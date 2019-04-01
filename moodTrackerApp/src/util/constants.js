@@ -1,0 +1,50 @@
+export const COLOR = {
+  WHITE: '#FFFFFF',
+  DARK_GRAY: '#4A4A4A',
+  GRAY: '#A9A9A9', // SLIDER GRAY
+  LIGHT_GRAY: '#E0E0E0', // FACE GRAY
+  ULTRA_LIGHT_GRAY: '#F2F2F2', // FACE GRAY
+  DARK_BLUE: '#1F4D75',
+  LIGHT_BLUE: '#4AA1D8',
+  AQUA: '#00C2BF',
+  AQUA_DARK: '#5FB2B6',
+  DARK_GREEN: '#87AD35',
+  LIGHT_GREEN: '#94BF38',
+  ORANGE: '#F6BC41',
+};
+
+export const MOOD_COLOR = {
+  SAD_MAX: COLOR.DARK_GRAY,
+  SAD: COLOR.DARK_BLUE,
+  SAD_MIN: COLOR.LIGHT_BLUE,
+  NEUTRAL: COLOR.AQUA,
+  HAPPY_MIN: COLOR.DARK_GREEN,
+  HAPPY: COLOR.LIGHT_GREEN,
+  HAPPY_MAX: COLOR.ORANGE,
+};
+
+export const STYLE = {
+  PADDING: {
+    SMALL: 5,
+    MEDIUM: 10,
+    LARGE: 20,
+    XLARGE: 30,
+  },
+  SCREEN_PADDING: 20,
+  BORDER_RADIUS: {
+    SMALL: 5,
+  },
+  TOUCHABLE_ACTIVE_OPACITY: 0.8,
+  TEXT: {
+    COLOR: {
+      DARK: COLOR.DARK_GRAY,
+    },
+    FONT_SIZE: {
+      XS: 8,
+      S: 10,
+      M: 15,
+      L: 20,
+      XL: 25,
+    },
+  },
+};
