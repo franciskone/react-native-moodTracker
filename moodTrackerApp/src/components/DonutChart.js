@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { PieChart } from 'react-native-svg-charts';
-import { MoodFace } from './MoodPicker/MoodFace';
+import { MoodFace } from '.';
 import { COLOR } from '../util/constants';
 
 const computedText = (entryAmount) => {
