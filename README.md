@@ -30,4 +30,10 @@ A React Native application built with the following technologies:
 * to start the project run `npm run ios`
 * to start test run `npm test:withgui`
 
+## Screenshots
+<img src="./docs/img/insights.png" alt="drawing" width="200"/>
+<img src="./docs/img/mood.png" alt="drawing" width="200"/>
+<img src="./docs/img/feelings.png" alt="drawing" width="200"/>
+<img src="./docs/img/comments.png" alt="drawing" width="200"/>
+
 
