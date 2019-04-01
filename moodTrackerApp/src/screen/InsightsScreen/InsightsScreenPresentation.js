@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
   },
   historyListContainer: {
     flex: 3,
-    backgroundColor: COLOR.WHITE,
     marginVertical: STYLE.PADDING.SMALL,
   },
 });

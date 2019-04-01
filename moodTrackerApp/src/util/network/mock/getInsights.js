@@ -36,7 +36,7 @@ export const getInsightsSuccess = () => ({
       moodLevel: 6,
       feelingSelectedList: ['optimistic', 'happy'],
       comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
-      timestamp: 1553749569000,
+      timestamp: 2553749569000,
     },
     {
       id: Math.floor(Math.random() * 1000000),

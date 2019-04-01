@@ -11,7 +11,6 @@ export const MoodHistoryList = ({ data }) => (
   <FlatList
     data={data}
     renderItem={({ item }) => <MoodHistoryItem data={item} />}
-    contentContainerStyle={styles.flatList}
   />
 );
 
@@ -26,9 +25,4 @@ MoodHistoryList.propTypes = {
 };
 MoodHistoryList.defaultProps = {};
 
-const styles = StyleSheet.create({
-
-  flatList: {
-    backgroundColor: 'purple',
-  },
-});
+const styles = StyleSheet.create({});
