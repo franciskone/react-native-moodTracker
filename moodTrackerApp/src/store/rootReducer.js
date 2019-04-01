@@ -9,7 +9,7 @@ export const ROOT_REDUCER_NAMES = {
 };
 
 export const persistedReducersList = [
-  ROOT_REDUCER_NAMES.CHECK_IN,
+  // ROOT_REDUCER_NAMES.CHECK_IN,
 ];
 
 const rootReducer = combineReducers({
