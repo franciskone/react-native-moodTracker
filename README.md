@@ -28,7 +28,7 @@ A React Native application built with the following technologies:
 
 * navigate to `moodTrackerApp`
 * to start the project run `npm run ios`
-* to start test run `npm test:withgui`
+* to start tests run `npm test:withgui`
 
 ## Screenshots
 <img src="./docs/img/insights.png" alt="drawing" width="200"/>
