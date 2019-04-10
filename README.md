@@ -1,5 +1,5 @@
 # moodTracker
-A React Native application built with the following technologies:
+A React Native test application built with the following technologies:
 
 ### State managment
 * redux
